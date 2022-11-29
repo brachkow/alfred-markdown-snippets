@@ -1,0 +1,1 @@
+# Obsidian Snippets Alfred Workflow
