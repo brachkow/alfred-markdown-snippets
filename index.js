@@ -25,11 +25,12 @@ class File {
 
 class Snippet {
   constructor(args) {
-    const { name, path, frontmatter, value } = args;
+    const { name, path, frontmatter, value, lang } = args;
     this.name = name;
     this.path = path;
     this.frontmatter = frontmatter;
     this.value = value;
+    this.lang = lang;
   }
 
   get tags() {
@@ -44,7 +45,7 @@ const getFiles = () => {
 };
 
 const findByType = (tree, type) => {
-  return tree.children.find((item) => item.type === type).value;
+  return tree.children.find((item) => item.type === type);
 };
 
 const getData = async (files) => {
@@ -59,9 +60,10 @@ const getData = async (files) => {
         .use(() => (tree) => {
           const name = file.name;
           const path = file.path;
-          const frontmatter = yaml.load(findByType(tree, 'yaml'));
-          const value = findByType(tree, 'code');
-          data.push(new Snippet({ name, path, frontmatter, value }));
+          const frontmatter = yaml.load(findByType(tree, 'yaml').value);
+          const value = findByType(tree, 'code').value;
+          const lang = findByType(tree, 'code').lang;
+          data.push(new Snippet({ name, path, frontmatter, value, lang }));
         })
         .process(await read(file.path));
     }),
@@ -76,7 +78,7 @@ const data = await getData(files);
 const items = alfy.inputMatches(data, 'name').map((snippet) => {
   return {
     title: snippet.name,
-    subtitle: snippet.tags,
+    subtitle: `written in ${snippet.lang}`,
     uid: snippet.path,
     arg: snippet.value,
     text: {
