@@ -20,6 +20,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0F5CE393-2181-449E-BB8A-704D712A5DA8</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open in finder</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
@@ -32,25 +42,6 @@
 	<string>Obsidian Snippets</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>E7633996-3B1D-4180-B91A-DE25A1335FA4</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -100,24 +91,63 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E7633996-3B1D-4180-B91A-DE25A1335FA4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>0F5CE393-2181-449E-BB8A-704D712A5DA8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0F5CE393-2181-449E-BB8A-704D712A5DA8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>265</integer>
+		</dict>
 		<key>E7633996-3B1D-4180-B91A-DE25A1335FA4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>540</integer>
 			<key>ypos</key>
 			<integer>130</integer>
 		</dict>
 		<key>F3DC793C-23EB-4309-8D18-A72A9BFAE445</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>260</integer>
 			<key>ypos</key>
-			<integer>135</integer>
+			<integer>130</integer>
 		</dict>
 	</dict>
 	<key>variables</key>

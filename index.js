@@ -81,6 +81,13 @@ const items = alfy.inputMatches(data, 'name').map((snippet) => {
     subtitle: `written in ${snippet.lang}`,
     uid: snippet.path,
     arg: snippet.value,
+    mods: {
+      alt: {
+        valid: true,
+        arg: snippet.path,
+        subtitle: 'Open in Finder',
+      },
+    },
     text: {
       copy: snippet.value,
       largetype: snippet.value,
