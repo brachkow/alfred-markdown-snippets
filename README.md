@@ -7,7 +7,7 @@ Search and paste your snippets stored as [markdown files](https://raw.githubuser
 ## How to use
 
 1. Put you [markdown files with snippets](https://raw.githubusercontent.com/brachkow/alfred-markdown-snippets/main/snippet-example.md) into one folder. Snippets should be stored flat (no nested folders).
-2. Get your folder path and set it as ROOT variable inside workflow settings (in Alfred Preferences go to Workflows > Markdown Snippets > `[x]` icon).
+2. [Download and install workflow](https://github.com/brachkow/alfred-markdown-snippets/releases). In installation window put your folder path as ROOT variable.
 3. In Alfred Preferences go to Features > Snippets and disable or change «Snippet keyword»
 4. Enter snip to search through your snippets
 
