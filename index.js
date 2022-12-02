@@ -59,11 +59,11 @@ const getData = async (files) => {
         .use(remarkStringify)
         .use(remarkFrontmatter, { type: 'yaml', marker: '-' })
         .use(() => (tree) => {
-          const name = file.name;
           const path = file.path;
           const frontmatter = findByType(tree, 'yaml').value
             ? yaml.load(findByType(tree, 'yaml').value)
             : [];
+          const name = frontmatter.name ? frontmatter.name : file.name;
           const value = findByType(tree, 'code').value;
           const lang = findByType(tree, 'code').lang;
           data.push(new Snippet({ name, path, frontmatter, value, lang }));
