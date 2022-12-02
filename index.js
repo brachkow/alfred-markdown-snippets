@@ -6,6 +6,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 import remarkStringify from 'remark-stringify';
 import yaml from 'js-yaml';
 import { readdirSync } from 'node:fs';
+import Fuse from 'fuse.js';
 
 const ROOT = process.env.ROOT;
 
@@ -60,9 +61,9 @@ const getData = async (files) => {
         .use(() => (tree) => {
           const name = file.name;
           const path = file.path;
-          const frontmatter = findByType(tree, 'yaml')
+          const frontmatter = findByType(tree, 'yaml').value
             ? yaml.load(findByType(tree, 'yaml').value)
-            : null;
+            : [];
           const value = findByType(tree, 'code').value;
           const lang = findByType(tree, 'code').lang;
           data.push(new Snippet({ name, path, frontmatter, value, lang }));
@@ -77,7 +78,17 @@ const getData = async (files) => {
 const files = getFiles();
 const data = await getData(files);
 
-const items = alfy.inputMatches(data, 'name').map((snippet) => {
+const matcher = (snippet, query) => {
+  const options = {
+    keys: ['name', 'frontmatter.tags', 'lang'],
+  };
+
+  const fuse = new Fuse(data, options);
+
+  return [...fuse.search(alfy.input).map((match) => match.item)];
+};
+
+const items = matcher().map((snippet) => {
   const item = {
     title: snippet.name,
     uid: snippet.path,
