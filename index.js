@@ -60,7 +60,9 @@ const getData = async (files) => {
         .use(() => (tree) => {
           const name = file.name;
           const path = file.path;
-          const frontmatter = yaml.load(findByType(tree, 'yaml').value);
+          const frontmatter = findByType(tree, 'yaml')
+            ? yaml.load(findByType(tree, 'yaml').value)
+            : null;
           const value = findByType(tree, 'code').value;
           const lang = findByType(tree, 'code').lang;
           data.push(new Snippet({ name, path, frontmatter, value, lang }));
