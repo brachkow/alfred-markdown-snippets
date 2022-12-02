@@ -78,9 +78,8 @@ const files = getFiles();
 const data = await getData(files);
 
 const items = alfy.inputMatches(data, 'name').map((snippet) => {
-  return {
+  const item = {
     title: snippet.name,
-    subtitle: `written in ${snippet.lang}`,
     uid: snippet.path,
     arg: snippet.value,
     mods: {
@@ -95,6 +94,12 @@ const items = alfy.inputMatches(data, 'name').map((snippet) => {
       largetype: snippet.value,
     },
   };
+
+  snippet.lang
+    ? (item.subtitle = `written in ${snippet.lang}`)
+    : (item.subtitle = 'written in plain text');
+
+  return item;
 });
 
 alfy.output(items);
