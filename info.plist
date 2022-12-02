@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>brachkow.obsidian-snippets</string>
+	<string>brachkow.markdown-snippets</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -35,13 +35,32 @@
 	<key>createdby</key>
 	<string>Timur Brachkow</string>
 	<key>description</key>
-	<string></string>
+	<string>Search and paste your snippets stored as markdown files</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Obsidian Snippets</string>
+	<string>Markdown Snippets</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E7633996-3B1D-4180-B91A-DE25A1335FA4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -94,25 +113,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>E7633996-3B1D-4180-B91A-DE25A1335FA4</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>path</key>
 				<string></string>
 			</dict>
@@ -156,8 +156,8 @@
 		<string></string>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/brachkow/alfred-markdown-snippets</string>
 </dict>
 </plist>

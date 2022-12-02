@@ -1,4 +1,4 @@
-# Obsidian Snippets Alfred Workflow
+# Markdown Snippets Alfred Workflow
 
 ![animated preview of workflow](./preview.gif)
 
